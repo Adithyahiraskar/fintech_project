@@ -15,7 +15,7 @@ brief every morning.
 | `index.html` | Marketing page: problem, how it works, capabilities, local signals, positioning, KPIs, roadmap, early access form |
 | `privacy.html` | Privacy policy, including rules for aggregated neighbourhood insights |
 | `terms.html` | Terms and conditions |
-| `styles.css` | Editorial, restrained design system. No gradients, no pill buttons, no scroll animation |
+| `styles.css` | Dashboard-style design system: fixed dark sidebar, white panels, green accents, CSS-built chart. No gradients, no scroll animation |
 | `script.js` | Mobile navigation toggle and early access form validation |
 | `favicon.svg` | Favicon (SVG) |
 
