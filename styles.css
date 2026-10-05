@@ -769,6 +769,78 @@ input:focus, select:focus { outline: 2px solid var(--green); outline-offset: 1px
 .btn-secondary { background: var(--panel); border-color: var(--line); color: var(--ink) !important; }
 .btn-secondary:hover { border-color: var(--ink); color: var(--ink) !important; }
 
+/* Density: extra dashboard rows */
+
+.chart { height: 296px; padding-left: 48px; }
+.chart .gridline span { left: 0; background: none; }
+.bar.we { background: #eef0ed; }
+
+.today-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 26px;
+  margin-bottom: 18px;
+}
+
+.today-strip .ts-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.today-strip .ts-item { font-size: 14px; color: var(--muted); }
+.today-strip .ts-item strong { color: var(--ink); font-size: 17px; margin-right: 5px; }
+
+.mini-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.mini-row:last-child { border-bottom: 0; }
+.mini-row .mr-main { min-width: 0; color: var(--ink); }
+.mini-row .mr-sub { font-size: 12.5px; color: var(--muted); display: block; }
+.mini-row .mr-val { font-weight: 700; white-space: nowrap; }
+.mini-row .mr-val.down { color: var(--red); }
+.mini-row .mr-val.up { color: var(--green); }
+
+.evt-date {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 7px;
+  margin-right: 8px;
+  color: var(--ink-soft);
+}
+
+.pair {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.pair:last-child { border-bottom: 0; }
+.pair .p-name { color: var(--ink); }
+.pair .p-meta { font-size: 12.5px; color: var(--muted); display: block; }
+.pair .p-lift { color: var(--green); font-weight: 700; font-size: 13px; white-space: nowrap; }
+
+.panel .btn.block { display: block; width: 100%; text-align: center; margin-top: 12px; }
+
+
 
 
 
