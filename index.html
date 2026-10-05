@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bazaarwise: demand forecasting and daily decisions for small Indian shops</title>
+  <meta name="description" content="Bazaarwise turns a small merchant's sales data and local signals such as weather, festivals, and match days into a short daily WhatsApp brief with concrete stocking, pricing, and customer actions.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 32 32" fill="none"><path d="M4 24 L12 14 L17 19 L28 6" stroke="#faf7f0" stroke-width="4" stroke-linecap="square"/></svg>
+        </span>
+        Bazaarwise
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <nav class="nav" aria-label="Main">
+        <a href="#how">How it works</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#signals">Local signals</a>
+        <a href="#measuring">What we measure</a>
+        <a href="#early-access" class="nav-cta">Request early access</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">For neighbourhood shops, kirana stores, and small retailers in India</p>
+          <h1>Stock the right quantity before the rain arrives, not after it starts.</h1>
+          <p class="hero-sub">Bazaarwise reads your daily sales alongside local signals like weather, festivals, cricket match days, and school calendars. Each morning it sends one short WhatsApp voice brief that answers a single question: what should you do today?</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#early-access">Request early access</a>
+            <a class="btn btn-secondary" href="#how">See how it works</a>
+          </div>
+          <p class="hero-fine">Built for merchants who do not have time to study dashboards. No new billing hardware required.</p>
+        </div>
+
+        <aside class="brief" aria-label="Example of a Bazaarwise morning brief">
+          <div class="brief-head">
+            <span class="brief-title">Morning brief</span>
+            <span class="brief-meta">Voice note, 40 seconds</span>
+          </div>
+          <div class="brief-label">Example output for a sample grocery shop</div>
+          <div class="brief-body">
+            <div class="brief-item">
+              <strong><span class="brief-tag tag-stock">Stock</span>Monsoon rain expected tomorrow</strong>
+              Tea, biscuits, and umbrellas usually sell faster on rainy days. Current umbrella stock is 3. Order 12 before 6 pm.
+              <span class="brief-why">Why: your rainy-day sales of these items ran about 1.6 times your average-day sales over the last two months.</span>
+            </div>
+            <div class="brief-item">
+              <strong><span class="brief-tag tag-stock">Stock</span>Ganesh Chaturthi is in 3 days</strong>
+              Modak flour and jaggery demand usually rises a week before the festival. Order from your supplier today.
+              <span class="brief-why">Why: supplier lead time is 2 days, so ordering later risks missing the demand window.</span>
+            </div>
+            <div class="brief-item">
+              <strong><span class="brief-tag tag-expiry">Expiry</span>18 bread packets expire tomorrow</strong>
+              Run a bread and butter combo today, or discount them by 10 percent this evening.
+              <span class="brief-why">Why: expired stock is a full loss. A discount still recovers your margin.</span>
+            </div>
+            <div class="brief-item">
+              <strong><span class="brief-tag tag-customer">Customers</span>8 regulars are past their usual visit</strong>
+              These customers normally buy every 9 to 12 days. Two have not returned in 30 days. Send a WhatsApp check-in.
+              <span class="brief-why">Why: reaching out before they fully lapse is cheaper than winning them back later.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+
+    <section class="section" id="problem">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">The problem</p>
+          <h2>Small merchants make high-stakes decisions on gut feeling and a paper ledger</h2>
+          <p>Stock is ordered by habit, regular customers quietly disappear, festival and weather demand arrives unannounced, and short-shelf-life stock expires on the shelf. Existing software records what already happened. It rarely says what to do next.</p>
+        </div>
+        <div class="problem-grid">
+          <div class="card">
+            <h3>Stock-outs at the wrong moment</h3>
+            <p>Demand spikes on rainy days, match days, and festival weeks. Orders placed after the spike starts arrive too late, and the sale goes to the shop down the road.</p>
+          </div>
+          <div class="card">
+            <h3>Working capital stuck on shelves</h3>
+            <p>Slow movers get reordered out of habit. Cash that could buy fast-moving stock sits in boxes nobody buys.</p>
+          </div>
+          <div class="card">
+            <h3>Expiry waste</h3>
+            <p>Bread, milk, and packaged snacks have days, not months. Without a daily reminder, expiring stock is discovered after it is unsellable.</p>
+          </div>
+          <div class="card">
+            <h3>Regulars lapse quietly</h3>
+            <p>A customer who shopped every 10 days for a year stops. Nothing in a billing book flags that, and by the time it is visible they have a new shop.</p>
+          </div>
+          <div class="card">
+            <h3>Local signals never reach the order book</h3>
+            <p>Weather, festivals, cricket, school calendars, and society events move demand every week. Most merchants hear about them, then order the same quantities as always.</p>
+          </div>
+          <div class="card">
+            <h3>Analytics tools assume an analyst</h3>
+            <p>Dashboards full of charts do not help a shopkeeper at 7 am with two customers waiting. The answer needs to be a sentence, not a graph.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From raw transactions to one decision, every morning</h2>
+          <p>The system runs the same chain every day. Each step narrows the output until the merchant receives a small number of actions with the reason attached.</p>
+        </div>
+        <div class="chain">
+          <div class="chain-step">
+            <span class="num">STEP 1</span>
+            <h3>Data</h3>
+            <p>Online and offline sales, stock levels, prices, expiry dates, and customer purchases flow into one store.</p>
+          </div>
+          <div class="chain-step">
+            <span class="num">STEP 2</span>
+            <h3>Insight</h3>
+            <p>Velocity, trends, slow movers, basket patterns, and customer segments are computed.</p>
+          </div>
+          <div class="chain-step">
+            <span class="num">STEP 3</span>
+            <h3>Prediction</h3>
+            <p>Next-day and 7-day demand is forecast per product, adjusted for weather and the calendar.</p>
+          </div>
+          <div class="chain-step">
+            <span class="num">STEP 4</span>
+            <h3>Recommendation</h3>
+            <p>Forecast, stock, shelf life, and margin rules produce specific reorder, discount, and outreach actions.</p>
+          </div>
+          <div class="chain-step">
+            <span class="num">STEP 5</span>
+            <h3>Action</h3>
+            <p>The merchant gets a WhatsApp voice brief and one tap to accept or dismiss each action.</p>
+          </div>
+          <div class="chain-step">
+            <span class="num">STEP 6</span>
+            <h3>Measured value</h3>
+            <p>Accepted actions are tracked against what actually sold, so forecast accuracy improves.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="capabilities">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Eleven systems, one purpose: the next right action</h2>
+          <p>Every capability exists to answer a question a merchant already asks themselves. None of them exist to make a dashboard look busy.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>Photo to product catalog</h3>
+            <p>Photograph a product and the system drafts a name, category, tags, search keywords, description, and basic attributes. The merchant edits and approves before anything goes live.</p>
+            <p class="why">Removes the typing that stops small merchants from ever listing products online.</p>
+          </div>
+          <div class="feature">
+            <h3>One sales ledger, online and offline</h3>
+            <p>Counter sales and online orders write to the same store. Quantity, revenue, cost, margin, and per-product velocity update on every sale.</p>
+            <p class="why">One number for the business instead of two books that never agree.</p>
+          </div>
+          <div class="feature">
+            <h3>Inventory that knows what is coming</h3>
+            <p>Stock, minimum thresholds, supplier details, and historical movement sit next to the forecast, so a low stock level is read against expected demand, not in isolation.</p>
+            <p class="why">Turns "I am running low" into "order 30 units before Thursday."</p>
+          </div>
+          <div class="feature">
+            <h3>Customer intelligence (RFM, explained simply)</h3>
+            <p>Recency, frequency, and value become five plain labels: New, Good, Moderate, At Risk, Inactive. A regular who is overdue against their own purchase interval flips to At Risk automatically.</p>
+            <p class="why">Shows who is drifting away while there is still time to act.</p>
+          </div>
+          <div class="feature">
+            <h3>Acquisition and retention tracking</h3>
+            <p>Record how each customer arrived (walk-in, referral, WhatsApp, campaign), measure which sources actually produce regulars, and get reminders with a suggested message for the ones at risk.</p>
+            <p class="why">Makes word of mouth measurable instead of assumed.</p>
+          </div>
+          <div class="feature">
+            <h3>Demand forecasting, next day and next week</h3>
+            <p>Historical sales, weekday patterns, and seasonality produce a per-product demand estimate: expected units tomorrow, expected peak-day demand, and a recommended order quantity.</p>
+            <p class="why">Replaces the order-book guess with a number the merchant can adjust.</p>
+          </div>
+          <div class="feature">
+            <h3>Context-aware local forecasting</h3>
+            <p>The forecast is then corrected using weather, festival calendars, cricket fixtures, school schedules, and aggregated neighbourhood demand patterns.</p>
+            <p class="why">Rain, festival weeks, and match days change what sells. The order should change too.</p>
+          </div>
+          <div class="feature">
+            <h3>WhatsApp voice morning brief</h3>
+            <p>A 40-second voice note summarises only the highest priority actions: what to order, what to discount, who to contact. The dashboard stays available for detail.</p>
+            <p class="why">Meets the merchant where they already communicate, without a login.</p>
+          </div>
+          <div class="feature">
+            <h3>Pricing recommendations with guardrails</h3>
+            <p>Price suggestions consider demand, stock, velocity, shelf life, and margin, and never go below the merchant's own minimum margin. Every suggestion states the trigger, for example: stock is high, demand is slow, expiry is near, consider 5 to 10 percent off.</p>
+            <p class="why">Clears ageing stock without quietly eroding profit.</p>
+          </div>
+          <div class="feature">
+            <h3>Trends, shelf life, and cross-sell</h3>
+            <p>Rising and falling products are named in plain language, expiring stock is ranked by urgency, and frequently bought together pairs drive combo and placement suggestions such as tea with biscuits or bread with milk.</p>
+            <p class="why">Each of these adds revenue from stock the merchant already holds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="signals">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Local signals</p>
+          <h2>Your sales history is only half of the forecast</h2>
+          <p>History describes the shop. Context describes tomorrow. The engine combines both, then explains which signal changed the recommendation.</p>
+        </div>
+        <div class="signal-columns">
+          <div class="signal-box">
+            <h3>Internal signals (the merchant's own data)</h3>
+            <ul>
+              <li>Sales history by product, day, and channel</li>
+              <li>Weekday and weekend patterns</li>
+              <li>Product seasonality and previous peak days</li>
+              <li>Current stock and open orders</li>
+              <li>Customer purchase intervals and segments</li>
+              <li>Expiry dates and remaining shelf life</li>
+              <li>Price changes and promotion history</li>
+            </ul>
+          </div>
+          <div class="signal-box">
+            <h3>External signals (the world outside the shop)</h3>
+            <ul>
+              <li>Weather forecast: rain, heat, humidity</li>
+              <li>Festival and holiday calendars, national and regional</li>
+              <li>Cricket and other sports fixture days</li>
+              <li>School calendars: term start, exams, holidays</li>
+              <li>Local and community events near the shop</li>
+              <li>Aggregated, anonymised neighbourhood demand patterns</li>
+            </ul>
+          </div>
+        </div>
+        <div class="privacy-note">
+          <strong>Privacy rule:</strong> neighbourhood insights are aggregated and anonymised across merchants. No individual customer's transactions are ever visible to another merchant, and the system collects only the personal data needed to serve that merchant's own customers.
+        </div>
+      </div>
+    </section>
+
+    <section class="section positioning" id="positioning">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" style="color:#b8b3a4;">Positioning</p>
+          <h2>What this product is, and what it deliberately is not</h2>
+        </div>
+        <div class="positioning-grid">
+          <div>
+            <p><strong style="color:#fff;">A smart merchant growth and decision-support platform that turns business data and local context into actionable daily decisions.</strong></p>
+            <p>Predict demand. Understand customers. Optimise inventory and price. Recommend the action. Help the shop grow.</p>
+          </div>
+          <div>
+            <ul class="muted-list">
+              <li>Not just a billing application</li>
+              <li>Not just an inventory system</li>
+              <li>Not just a CRM</li>
+              <li>Not just an e-commerce catalog</li>
+              <li>Not just a dashboard of charts</li>
+              <li>Not just an AI chatbot</li>
+            </ul>
+            <ul style="margin-top:16px;">
+              <li>Answers "what should I do today?" first, "what happened?" second</li>
+              <li>Every recommendation carries the reason behind it</li>
+              <li>Deterministic rules where rules are more reliable than models</li>
+              <li>The merchant can edit or override anything the system suggests</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="measuring">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">What we measure</p>
+          <h2>Value that shows up in the shop's own numbers</h2>
+          <p>Recommendations are only useful if the effect is visible in a metric the merchant already cares about. These are the metrics the platform tracks from day one.</p>
+        </div>
+        <div class="kpi-grid">
+          <div class="kpi">
+            <h3>Stock-out rate</h3>
+            <p>Share of days a product sells out before closing, tracked against forecast accuracy.</p>
+          </div>
+          <div class="kpi">
+            <h3>Expiry wastage</h3>
+            <p>Retail value of stock written off due to expiry, before and after alerts are acted on.</p>
+          </div>
+          <div class="kpi">
+            <h3>Dead-stock value</h3>
+            <p>Value of units with no sale in the last 60 days, as a share of inventory value.</p>
+          </div>
+          <div class="kpi">
+            <h3>Inventory turnover</h3>
+            <p>How fast stock converts to sales, by category, month over month.</p>
+          </div>
+          <div class="kpi">
+            <h3>Repeat purchase rate and retention</h3>
+            <p>Share of customers returning within their own normal purchase interval.</p>
+          </div>
+          <div class="kpi">
+            <h3>Average order value</h3>
+            <p>Basket size before and after cross-sell and combo suggestions.</p>
+          </div>
+          <div class="kpi">
+            <h3>Forecast accuracy</h3>
+            <p>How close predicted demand was to actual sales, per product and per week.</p>
+          </div>
+          <div class="kpi">
+            <h3>Recommendation acceptance rate</h3>
+            <p>Share of suggested actions the merchant accepts, and the measured outcome of each accepted action.</p>
+          </div>
+        </div>
+        <p class="target-note">Targets such as 8 to 12 percent higher sales on peak days are hypotheses to validate through pilot data with real merchants. They are not guaranteed results, and this site does not present them as such.</p>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Build order</p>
+          <h2>MVP first, advanced signals next</h2>
+          <p>The MVP proves the loop with data the merchant already has. Hyperlocal signals and pricing intelligence layer on once the loop is trusted.</p>
+        </div>
+        <div class="roadmap-grid">
+          <div class="roadmap-col">
+            <h3>MVP</h3>
+            <ol>
+              <li>Merchant account and business profile</li>
+              <li>Product catalog with photo-based label and tag generation</li>
+              <li>Unified online and offline sales recording</li>
+              <li>Inventory tracking with automatic stock deduction</li>
+              <li>Customer segmentation (New, Good, Moderate, At Risk, Inactive)</li>
+              <li>Sales trend analysis</li>
+              <li>Demand forecasting for next day and next 7 days</li>
+              <li>Shelf-life alerts</li>
+              <li>Central recommendation engine</li>
+              <li>WhatsApp and voice recommendation demo</li>
+            </ol>
+          </div>
+          <div class="roadmap-col">
+            <h3>Next</h3>
+            <ol>
+              <li>Hyperlocal aggregated demand signals</li>
+              <li>Context-aware forecasting (weather, festivals, cricket, school)</li>
+              <li>Pricing recommendations with margin guardrails</li>
+              <li>Customer churn risk scoring</li>
+              <li>Acquisition source analytics</li>
+            </ol>
+          </div>
+          <div class="roadmap-col">
+            <h3>Later</h3>
+            <ol>
+              <li>Cross-sell and basket analysis automation</li>
+              <li>Neighbourhood demand network across merchants</li>
+              <li>Campaign performance measurement</li>
+              <li>Multi-shop and distributor views</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section signup" id="early-access">
+      <div class="container signup-grid">
+        <div>
+          <p class="eyebrow">Early access</p>
+          <h2>Run the morning brief for your own shop</h2>
+          <p>We are onboarding a small group of merchants to validate the forecast loop with real sales data. Early merchants get:</p>
+          <ul>
+            <li>Free setup of catalog, sales, and inventory import</li>
+            <li>A daily WhatsApp voice brief for their shop</li>
+            <li>Direct input on which recommendations are actually useful</li>
+            <li>No hardware purchase and no long-term commitment</li>
+          </ul>
+          <p class="form-note">We contact merchants city by city as capacity opens. Your details are used only for this programme. See the <a href="privacy.html">privacy policy</a>.</p>
+        </div>
+        <div>
+          <form id="early-access-form" class="form-grid" novalidate>
+            <div>
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="shop">Shop name</label>
+              <input type="text" id="shop" name="shop" autocomplete="organization" required>
+            </div>
+            <div>
+              <label for="city">City or area</label>
+              <input type="text" id="city" name="city" autocomplete="address-level2" required>
+            </div>
+            <div>
+              <label for="contact">Phone number or email</label>
+              <input type="text" id="contact" name="contact" autocomplete="tel" required>
+            </div>
+            <div>
+              <label for="category">What do you mainly sell?</label>
+              <select id="category" name="category">
+                <option>Grocery and kirana</option>
+                <option>Food and snacks</option>
+                <option>Apparel and textiles</option>
+                <option>Electronics and accessories</option>
+                <option>Pharmacy and personal care</option>
+                <option>Home and hardware</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Request early access</button>
+            <div id="form-status" class="form-status" role="status">Thank you. Your details are recorded for the early access list. We will reach out when onboarding opens in your area.</div>
+            <div id="form-error" class="form-error" role="alert"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="footer-brand">Bazaarwise</span>
+        <p style="margin:6px 0 0;">Decision support for small Indian shops.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#how">How it works</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#early-access">Early access</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms and conditions</a>
+      </div>
+      <div>&copy; 2026 Bazaarwise. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
