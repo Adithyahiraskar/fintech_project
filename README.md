@@ -35,6 +35,10 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
+## License
+
+Open source under the [MIT License](LICENSE). You are free to use, modify, and share this code, with the copyright notice retained.
+
 ## Before launch checklist
 
 - [ ] Connect the custom domain and update `<title>`/canonical URLs
